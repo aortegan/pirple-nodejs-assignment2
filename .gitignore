@@ -1,0 +1,3 @@
+# Ignore all the content generated in the data folder except the menu items
+.data
+!.data/menu
