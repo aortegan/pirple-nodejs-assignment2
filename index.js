@@ -5,6 +5,7 @@
 
 // Dependencies
 var server = require('./lib/server');
+var helpers = require('./lib/helpers');
 //var workers = require('./lib/workers');
 
 // Declare the application
