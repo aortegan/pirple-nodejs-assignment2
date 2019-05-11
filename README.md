@@ -189,3 +189,9 @@ Payload object :
 Token id \(20 characters string\) is required in query parameters.
 
 [http://localhost:3000/orders?id=abcdefghijklmnopqrst](http://localhost:3000/tokens?id=abcdefghijklmnopqrst)
+
+### MENU - get - /menu
+
+No query parameters needed.
+
+[http://localhost:3000/menu](http://localhost:3000/menu)
