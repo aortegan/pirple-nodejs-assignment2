@@ -4,6 +4,8 @@ Second assignment for the NodeJS masterclass from Pirple
 
 ## Description
 
+API built on Node.js with no dependencies. PizzaDelivery API allows users to register, create carts and order their favourite pizzas. Payment through Stripe API. Notifications by email using Mailgun
+
 ## Using the API
 
 Set Content-Type as application/json in headers.
@@ -37,7 +39,7 @@ Payload object :
 
 User email is required in query parameters.
 
-**http://localhost:3000/users?email=example@domain.com**
+[http://localhost:3000/users?email=example@domain.com](http://localhost:3000/users?email=example@domain.com)
 
 ### USERS - put - /users
 
@@ -63,7 +65,7 @@ Payload object \(at least one must be specified\)
 
 User email is required in query parameters.
 
-**http://localhost:3000/users?email=example@domain.com**
+[http://localhost:3000/users?email=example@domain.com](http://localhost:3000/users?email=example@domain.com)
 
 ### TOKENS - post - /tokens
 
@@ -76,13 +78,13 @@ Payload object :
 }
 ```
 
-### TOKENS - get
+### TOKENS - get - /tokens?id=tokenId
 
 Token id \(20 characters string\) is required in query parameters.
 
-**http://localhost:3000/tokens?id=abcdefghijklmnopqrst**
+[http://localhost:3000/tokens?id=abcdefghijklmnopqrst](http://localhost:3000/tokens?id=abcdefghijklmnopqrst)
 
-### TOKENS - put
+### TOKENS - put - /tokens
 
 Payload object \(all fields are required, we can only update the expire date\) :
 
@@ -93,24 +95,97 @@ Payload object \(all fields are required, we can only update the expire date\) :
 }
 ```
 
-### TOKENS - delete
+### TOKENS - delete - /tokens?id=tokenId
 
 Token id \(20 characters string\) is required in query parameters.
 
-**http://localhost:3000/tokens?id=abcdefghijklmnopqrst**
+[http://localhost:3000/tokens?id=abcdefghijklmnopqrst](http://localhost:3000/tokens?id=abcdefghijklmnopqrst)
 
-### CARTS - post
+### CARTS - post - /carts
 
-### CARTS - get
+Payload object:
 
-### CARTS - put
+```
+{
+"items" : [
+{
+"id" : 1,
+"name" : "Napolitana",
+"size" : "M",
+"price" : 20,
+"qty" : 2
+},
+{
+"id" : 12,
+"name" : "Carbonara",
+"size" : "M",
+"price" : 23,
+"qty" : 1
+}
+]
+}
+```
 
-### CARTS - delete
+### CARTS - get - /carts?id=cartId
 
-### ORDERS - post
+Token id \(20 characters string\) is required in query parameters.
 
-### ORDERS - get
+[http://localhost:3000/carts?id=abcdefghijklmnopqrst](http://localhost:3000/tokens?id=abcdefghijklmnopqrst)
 
-### ORDERS - put
+### CARTS - put - /carts
+
+Payload object \(all fields are required\) :
+
+```
+{
+"id" : "abcdefghijklmnopqrst",
+"item" : {
+"id" : 12,
+"name" : "Carbonara",
+"size" : "M",
+"price" : 23,
+"qty" : 2
+}
+}
+```
+
+### CARTS - delete -/carts?id=cartId
+
+Token id \(20 characters string\) is required in query parameters.
+
+[http://localhost:3000/carts?id=abcdefghijklmnopqrst](http://localhost:3000/tokens?id=abcdefghijklmnopqrst)
+
+### ORDERS - post - /orders
+
+Payload object :
+
+```
+{
+"cartId" : "abcdefghijklmnopqrst",
+"stripeId" : "abcdefghijklmnopqrst",
+"deliveryTime" : dateObject
+}
+```
+
+### ORDERS - get - /orders?id=orderId
+
+Token id \(20 characters string\) is required in query parameters.
+
+[http://localhost:3000/orders?id=abcdefghijklmnopqrst](http://localhost:3000/tokens?id=abcdefghijklmnopqrst)
+
+### ORDERS - put - /orders
+
+Payload object :
+
+```
+{
+"orderId" : "abcdefghijklmnopqrst",
+"orderStatus" : "waitinglist"
+}
+```
 
 ### ORDERS - delete
+
+Token id \(20 characters string\) is required in query parameters.
+
+[http://localhost:3000/orders?id=abcdefghijklmnopqrst](http://localhost:3000/tokens?id=abcdefghijklmnopqrst)
