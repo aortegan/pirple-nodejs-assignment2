@@ -4,7 +4,7 @@ Second assignment for the NodeJS masterclass from Pirple
 
 ## Description
 
-API built on Node.js with no dependencies. PizzaDelivery API allows users to register, create carts and order their favourite pizzas. Payment through Stripe API. Notifications by email using Mailgun
+API built on Node.js with no dependencies. PizzaDelivery API allows users to register, edit profile, create carts and order their favourite pizzas. Admin/Employees users can modify any cart and order Payment through Stripe API. Notifications by email using Mailgun.
 
 ## Using the API
 
